@@ -45,6 +45,7 @@ public class GraphsGUI extends javax.swing.JFrame {
         ButtonStack = new javax.swing.JButton();
         ButtonRecursiveFactorial = new javax.swing.JButton();
         ButtonQueue = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +84,8 @@ public class GraphsGUI extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Added Button on Mac");
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,6 +103,10 @@ public class GraphsGUI extends javax.swing.JFrame {
                     .add(ButtonRecursiveFactorial)
                     .add(ButtonRecursiveExponentiation))
                 .addContainerGap(120, Short.MAX_VALUE))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(190, Short.MAX_VALUE)
+                .add(jButton1)
+                .add(132, 132, 132))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -114,7 +121,9 @@ public class GraphsGUI extends javax.swing.JFrame {
                 .add(ButtonStack)
                 .add(18, 18, 18)
                 .add(ButtonQueue)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jButton1)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -264,6 +273,7 @@ public class GraphsGUI extends javax.swing.JFrame {
     private javax.swing.JButton ButtonRecursiveExponentiation;
     private javax.swing.JButton ButtonRecursiveFactorial;
     private javax.swing.JButton ButtonStack;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 
 }
