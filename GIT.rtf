@@ -1,0 +1,102 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf320
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14000\viewh10200\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs28 \cf0 git config //who we are and colors\
+git config --global user.name "Emir Ustamujic"\
+git config --global user.email "cijumatsu@yahoo.com"\
+git config --global color.status auto\
+git config --global color.diff auto\
+git config --global color.branch auto\
+\
+//UNSETTING AND SETTING UP THE EDITOR\
+\
+git config --global --unset-all core.editor\
+git config --unset-all core.editor\
+git config --global core.editor "vim -f"\
+\
+//PULLING\
+git pull origin master\
+\
+//REMOVING LAST COMMIT FROM REMOTE (WARNING! DANGEROUS)\
+\pard\pardeftab720\ql\qnatural
+
+\f1\fs24 \cf0 git push -f origin HEAD^:master\
+That should "undo" the push but leaves local repo still intact\
+\
+//REMOVING LAST COMMIT FROM LOCAL (WARNING! ALSO USE WITH LOT OF CARE)\
+git reset --soft HEAD^\
+git reset\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs28 \cf0 \
+\
+\
+mkdir SomeProject\
+git init\
+git status\
+nano readme.txt Hello World!\
+git status\
+git add readme.txt //adds the file to the repo stages the changes for the commit\
+git commit //commit the changes - puts our changes into the repo //we were doing it to the local repository\
+\
+git reset //clears = resets our staging area\
+git reset --hard //reverses the changes also in the file/s as well\
+\
+git log\
+\
+git commit -a // commit even the ones we haven't staged yet (to the local repository)\
+\
+---to get the code to the server or usb we have to push\
+---to get the we FETCH from the server\
+\
+//-local commits are good\
+\
+=== testing to write text from cmd : nano /Volumes/APACER/ProjectBackup/text.txt\
+git init --bare //creates a bare repo on the flashstick\
+\
+// .git normally this is the folder where the files are stored\
+\
+//flashstick or server are called remotes\
+git remote add usb /Volumes/APACER/ProjectBackup\
+//usb is the name\
+\
+GENERATE KEY :\
+ssh-keygen -t rsa -C "emcomaher@yahoo.com"\
+\
+//first time we have to create master branch\
+git push usb master\
+\
+----modify text\
+----git commit -a\
+---git push usb\
+\
+git init --bare --shared //shared for multiple developers (there are more args for shared)\
+\
+so in summary to push :\
+1. we create a remote repo\
+2. we tell git about the remote repo\
+3. we git push\
+\
+to fetch :\
+origin is the name of the remote//doesnt necessarily have to be this\
+git fetch origin //fetch gets changes from remote\
+git rebase origin //rebase applies them to our local copy\
+\
+\
+git clone git://github.com/cijumatsu/16-Oct-2010.git\
+git remote add github git@github.com:cijumatsu/16-Oct-2010.git\
+(git remote -v)\
+\
+1. git fetch github\
+2. git merge github/master\
+\
+git push github master\
+\
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzkL1QPhJxpMmUDbIhCZQoKwBLOVZUNi609qF5+6ulRI4K0eGjHWSZndEVlpUGO1PE+Y8Q4Uf4Khl4Fi4vRtlRmZ2zIKEJYnsVt94Di2Lw79lnrR8ZFB4RShE3zWMwbgp+qgNHcUVmji6a+05YJgRPKWiIgyT/XyOss9p2d0zNU+2zt/sPY1ZJuhxSLipybvjfUCc4jIriO2mdv5FwK2y/3jkS/A4UdRObYU21RmwfKeaZxAYb0ATAnxTCPWFAjlx8l36abPIdj1+xVOUiOVZj+eno5hApHCyzeXMcuFYClQbl2j2Ccs07Ws2U/qsSIkHtbM3TzEdzKUug1POFr4quQ== tekkub@gmail.com\
+\
+\
+}
